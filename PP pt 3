@@ -1,0 +1,23 @@
+float y = 25;
+float x = 50;
+float z = 50;
+float zspeed = 2.;
+
+void setup(){
+  size(100, 100);
+}
+
+void draw(){
+  background (204);
+  if (y  < 50){
+    ellipse(50, 50, 60, 60);
+  } else {
+    ellipse(x, z, 60, 60);
+    z += zspeed;
+    if(z > height || z < 0){
+      zspeed *= -1;
+    }
+  }
+  line(0, y, 100, y);
+  y += 0.25;
+}
